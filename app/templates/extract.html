@@ -1,4 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-    <p>To jest Strona z ekstrakcjami produktów.</p>
+<h2>Ekstrakcja Opinii</h2>
+
+<form method="post" action="{{url_for('extract')}}">
+    <div>
+        <label class="id" for="product_id">Id produktu: </label>
+        <input type="text" name="product_id" placeholder="*Kod Produktu*"> 
+    </div>
+    <div>
+        <label>musi byc od 5 do 10 cyfr</label>  
+    </div>
+    <div>
+        <input type="submit" value="kliknij">
+    </div>
+</form>
 {% endblock content %}

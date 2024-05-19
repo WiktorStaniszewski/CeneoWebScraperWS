@@ -9,6 +9,12 @@
 <body>
     <header>
         <h1>Ceneo.pl Web Scraper</h1>
+        <ul>
+            <li><a href="{{url_for('index')}}">Strona główna</a></li>
+            <li><a href="{{url_for('products')}}">Lista produktów</a></li>
+            <li><a href="{{url_for('extract')}}">Ekstrakcja opinii</a></li>
+            <li><a href="{{url_for('author')}}">O autorze</a></li>
+        </ul>
     </header>
     <section>
         {% block content %}
