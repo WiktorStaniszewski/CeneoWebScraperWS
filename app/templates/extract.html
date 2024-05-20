@@ -1,17 +1,22 @@
 {% extends "base.html" %}
+{% block title %}
+    Ekstrakcja opinii    
+{% endblock title %}
 {% block content %}
-<h2>Ekstrakcja Opinii</h2>
+{% if error is defined %}
+    <h2 class="error">{{error}}</h2>
+{% endif %}
 
 <form method="post" action="{{url_for('extract')}}">
     <div>
         <label class="id" for="product_id">Id produktu: </label>
-        <input type="text" name="product_id" placeholder="*Kod Produktu*"> 
+        <input type="text" name="product_id" placeholder="*Kod Produktu*" required> 
     </div>
     <div>
-        <label>musi byc od 5 do 10 cyfr</label>  
+        <label class="id2">(5 - 10 cyfr)</label>  
     </div>
     <div>
-        <input type="submit" value="kliknij">
+        <input id="button" type="submit" value="Download">
     </div>
 </form>
 {% endblock content %}
