@@ -11,11 +11,11 @@ body{
 header{
     background-color: #606c38;
     width: auto;
-    margin: 0;
+    margin: 10px;
     padding: 0;
 }
 p{
-    color: blue;
+    font-size: 1.2rem;
 }
 h1{
     color:#DEE4CA;
@@ -32,8 +32,7 @@ ul{
     margin-left: 0;
 }
 li{
-    width: 250px;
-    text-align: center;
+    width: 240px;
     display: inline-block;
     font-size: 1rem;
     border-style:solid;
@@ -48,7 +47,7 @@ li a{
     color: #DEE4CA;
     text-decoration: none;
     font-weight: bold;
-    padding: 20px 0 30px 0;
+    padding: 20px 0 20px 0;
 }
 li:hover{
     background-color: #465222;
@@ -67,19 +66,19 @@ section{
     100% { opacity: 1; }
 }
 .signature{
-    position: fixed;
+    position:fixed;
     bottom: 0;
     padding: 10px 10px 10px;
     background-color: #606c38;
     text-align: right;
-    margin-bottom: 0;
+    margin: 0px 0px 10px 0px;
     width: 100%;
     height: auto;
     right: 0;
 }
-footer{
+footer > p{
     color: #283618;
-    position: relative;
+    font-size: smaller;
 }
 .id{
     margin: 0;
@@ -108,5 +107,9 @@ input[type="submit"]:hover, textarea{
     background-color: #5B6735;
 }
 .error{
+    text-decoration: none;
+    text-shadow: none;
+    font-weight: light;
+    font-size: medium;
     color: red;
 }
