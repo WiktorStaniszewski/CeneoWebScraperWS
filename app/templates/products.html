@@ -3,5 +3,11 @@
     Lista produktów         
 {% endblock title %}
 {% block content %}
-    <p>{{products}}</p>
+    {% for product in products %}
+        <h5><a href="{{url_for('product', product_id=product['product_id'])}}" class="produkt_link">Produkt: {{product["product_name"]}}</a></h5>
+        <p>Liczba opinii: {{product["opinions_count"]}}</p>
+        <p>Liczba Zalet: {{product["pros_count"]}}</p>
+        <p>Liczba Wad: {{product["cons_count"]}}</p>
+        <p>Średnia ocena: {{("%.2f" % product["average_rating"])}}</p>
+    {% endfor %}
 {% endblock content %}
