@@ -1,7 +1,38 @@
 {% extends "base.html" %}
 {% block title %}
-    Produkt {{product_id}}         
+    Opinie o produkcie: {{product_id}}.  
+    <br> <a href="{{ url_for('download_json', product_id=product_id) }}" class="produkt_link">Pobierz JSON</a>     
+    <a href="{{ url_for('download_csv', product_id=product_id) }}" class="produkt_link">Pobierz CSV</a>   
+    <a href="{{ url_for('download_xlsx', product_id=product_id) }}" class="produkt_link">Pobierz XLSX</a>    
 {% endblock title %}
 {% block content %}
-    <p>To jest Strona z opiniami o produkcie {{product_id}}.</p>
+
+    {% for opinion in product %}
+    <div class="product_opinion">
+        <p class="opinion_content1">Published: {{opinion["publish_date"]}}</p>
+        <p class="opinion_content2">Purchased: {{opinion["purchase_date"]}}</p>
+        {% if not opinion["recommendation"] %}
+            <h5>{{opinion["author"]}} nie wypowiada się</h5>
+        {% elif opinion["recommendation"] == "Polecam" %}
+            <h5 class="recommended"><i class="bi bi-emoji-heart-eyes"></i> {{opinion["author"]}} Poleca <i class="bi bi-emoji-heart-eyes"></i></h5>
+        {% else %}
+            <h5 class="not_recommended"><i class="bi bi-ban"></i> {{opinion["author"]}} Nie poleca <i class="bi bi-ban"></i></h5>
+        {% endif %}
+        <p class="opinion_content">{{opinion["rating"]}}</p>
+        <p class="opinion_content">{{opinion["content"]}}</p>
+        <div class="goodnbad">
+            {% if opinion["pros"] %}
+                {% for pro in opinion["pros"] %}
+                    <p class="pro"><i class="bi bi-hand-thumbs-up"></i> {{pro}}</p>
+                {% endfor %}
+            {% endif %}
+            {% if opinion["cons"] %}<br>
+                {% for con in opinion["cons"] %}
+                    <p class="con"><i class="bi bi-hand-thumbs-down"></i> {{con}}</p>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+    <a href="#" class="topgoer">Back to top</a>
 {% endblock content %}

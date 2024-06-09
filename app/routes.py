@@ -83,7 +83,10 @@ def author():
 
 @app.route('/product/<product_id>')
 def product(product_id):
-    return render_template("product.html", product_id=product_id)
+    product = []
+    with open(f"app/data/opinions/{product_id}.json", "r", encoding="UTF-8") as jfile:
+            product = json.load(jfile)
+    return render_template("product.html", product_id=product_id, product = product)
 
 @app.route('/product/download_json/<product_id>')
 def download_json(product_id):

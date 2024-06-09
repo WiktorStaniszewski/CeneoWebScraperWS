@@ -1,7 +1,9 @@
 html{
     background-color: #2e341a;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     letter-spacing: 1.5px;
+    scroll-behavior: smooth;
 }
 body{
     margin: 0;
@@ -60,6 +62,7 @@ section{
     text-align: center;
     font-weight: 600;
     animation: fadeIn 2s;
+    padding-bottom: 40px;
 }
 @keyframes fadeIn {
     0% { opacity: 0; }
@@ -71,7 +74,7 @@ section{
     padding: 10px 10px 10px;
     background-color: #606c38;
     text-align: right;
-    margin: 0px 0px 10px 0px;
+    margin: 0px 0px 0px 0px;
     width: 100%;
     height: auto;
     right: 0;
@@ -106,10 +109,110 @@ input[type="submit"], textarea{
 input[type="submit"]:hover, textarea{
     background-color: #5B6735;
 }
+.topgoer{
+    background-color:#9eae6a;
+    position: fixed;
+    right: 0;
+    top: 90%;
+    margin-right: 20px;
+    height: 30px;
+    width: 50px;
+    font-size: 11px;
+    text-decoration: none;
+    color: #283618;
+}
 .error{
     text-decoration: none;
     text-shadow: none;
     font-weight: light;
     font-size: medium;
     color: red;
+}
+.product_opinion{
+    display: inline-table;
+    height: 350px;
+    width: 500px;
+    background-color: #3b461a;
+    border: solid, #465222;
+    box-shadow: 0px 0px 5px #17210c;
+    padding: -10px 0 10px 0;
+    margin: 10px;
+    overflow:scroll;
+}
+.opinion_content1{
+    font-size: 12px;
+    float: right;
+    position:flex;
+    top: 50%;
+}
+.opinion_content2{
+    font-size: 12px;
+    float: left;
+}
+.container{
+    background-color: #3b461a;
+    width: 500px;
+    height: 300px;
+    margin: 10px 10px 10px 10px;
+    padding: 0px 10px 0 10px;
+    display: inline-table;
+    justify-content: center;
+}
+.container > h5{
+    justify-content: center;
+}
+.goodnbad{
+    display: absolute;
+}
+.pro{
+    font-weight: light;
+    font-size: 12px;
+    display: inline-flex;
+    padding: -5px;
+    color: #d0e491;
+}
+.con{
+    font-weight: light;
+    font-size: 12px;
+    display: inline-flex;
+    padding: 10px 0 0 0;
+    color: #f1b8a3;
+
+}
+.produkt_link{
+    border: solid, #333e13;
+    box-shadow:inset 0 0 3px #465222;
+    color: #9eae6a;
+    font-size: 25px;
+    vertical-align: center;
+}
+.produkt_link:hover{
+    color:#606c38;
+}
+.recommended{
+    font-weight: bold;
+    font-size: 23px;
+    padding: 0;
+}
+.not_recommended{
+    font-weight: bold;
+    padding: 0;
+    font-size: 23px;
+}
+.opinion_content{
+    font-weight: light;
+    font-size: 15px;
+}
+::-webkit-scrollbar{
+    background:#465222;
+    width: 14px;
+}
+::-webkit-scrollbar-thumb{
+    background: #606c38;
+    border-radius: 10px;
+    box-shadow:inset 0 0 3px #465222; 
+
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #283618; 
 }
